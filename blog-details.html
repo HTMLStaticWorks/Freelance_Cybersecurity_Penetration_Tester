@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Details | CyberSec</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/layout.css">
+  
+  <style>
+    /* Blog Details Specific Styles */
+    
+    /* 1. Article Hero Cover */
+    .article-hero {
+      margin-top: 80px; /* Below fixed header */
+      height: 60vh;
+      min-height: 400px;
+      background: linear-gradient(to bottom, rgba(10,14,23,0.3), rgba(10,14,23,1)), url('https://loremflickr.com/1920/1080/cybersecurity,code?lock=60') center/cover;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 50px;
+    }
+    
+    /* 2. Main Content Typography */
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-color);
+    }
+    
+    .article-content p {
+      margin-bottom: 25px;
+    }
+    
+    .article-content h2 {
+      margin: 40px 0 20px;
+      color: var(--color-primary);
+    }
+    
+    .article-content pre {
+      background: #0d1117;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+      overflow-x: auto;
+      margin-bottom: 25px;
+    }
+    
+    .article-content code {
+      color: var(--color-secondary);
+      font-family: monospace;
+    }
+    
+    .article-content blockquote {
+      border-left: 4px solid var(--color-secondary);
+      padding-left: 20px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin: 30px 0;
+    }
+    
+    /* 3. Sidebar Layout */
+    .sidebar-widget {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .sidebar-title {
+      font-size: 1.2rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .tag-cloud a {
+      display: inline-block;
+      padding: 5px 12px;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin: 0 5px 10px 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    
+    .tag-cloud a:hover {
+      background: var(--color-primary);
+      color: #000;
+    }
+    
+    /* 4. Author Box */
+    .author-box {
+      display: flex;
+      gap: 20px;
+      padding: 40px;
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.05), transparent);
+      border-radius: 16px;
+      border: 1px dashed var(--color-primary);
+      margin: 50px 0;
+    }
+    
+    .author-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--color-secondary);
+    }
+    
+    /* 5. Related Articles Strip */
+    .related-strip {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-primary) var(--surface-color);
+    }
+    
+    .related-card {
+      min-width: 280px;
+      flex: 0 0 280px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+    
+    .related-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    
+    .related-card-body {
+      padding: 20px;
+      background: var(--surface-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="cyber-header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo-container">
+        <!-- SVG Logo -->
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+          <circle cx="50" cy="45" r="15" fill="currentColor"/>
+          <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+        </svg>
+        <h1 class="logo-text">Cyber<span class="text-gradient">Sec</span></h1>
+      </div>
+      
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link-cyber">Home 1</a>
+        <a href="home-2.html" class="nav-link-cyber">Home 2</a>
+        <a href="about.html" class="nav-link-cyber">About</a>
+        <a href="services.html" class="nav-link-cyber">Services</a>
+        <a href="blog.html" class="nav-link-cyber active">Blog</a>
+        <a href="contact.html" class="nav-link-cyber">Contact</a>
+      </nav>
+      
+      <div class="header-controls">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-language"></i></button>
+        <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-md-inline-flex">Hire Me</a>
+        
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-link-cyber">Home 1</a>
+      <a href="home-2.html" class="nav-link-cyber">Home 2</a>
+      <a href="about.html" class="nav-link-cyber">About</a>
+      <a href="services.html" class="nav-link-cyber">Services</a>
+      <a href="blog.html" class="nav-link-cyber active">Blog</a>
+      <a href="contact.html" class="nav-link-cyber">Contact</a>
+      <a href="booking.html" class="btn-cyber btn-cyber-primary mt-4">Hire Me</a>
+    </nav>
+  </div>
+
+  <!-- Section 1: Hero Cover -->
+  <section class="article-hero reveal-fade-up">
+    <div class="container">
+      <div class="max-w-800">
+        <span class="badge bg-primary text-dark mb-3">Zero-Day Analysis</span>
+        <h1 class="fs-1 text-white mb-4">Deconstructing the Latest GraphQL Authorization Bypass</h1>
+        <div class="d-flex align-items-center gap-4 text-light opacity-75 small">
+          <span><i class="fas fa-user me-2"></i> CyberSec Expert</span>
+          <span><i class="fas fa-calendar me-2"></i> October 24, 2026</span>
+          <span><i class="fas fa-clock me-2"></i> 12 Min Read</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container section-padding">
+    <div class="row">
+      <!-- Section 2: Main Article Content -->
+      <div class="col-lg-8 pe-lg-5 reveal-slide-right delay-100">
+        <article class="article-content">
+          <p class="lead">GraphQL has rapidly become the standard for modern API development, offering incredible flexibility for front-end clients. However, this flexibility introduces unique security challenges, particularly concerning authorization controls at the resolver level.</p>
+          
+          <p>In this technical write-up, we dissect a recent vulnerability pattern found in several high-profile SaaS applications, where developers improperly assumed that restricting queries implicitly secured mutations.</p>
+          
+          <h2>The Anatomy of the Flaw</h2>
+          <p>Unlike traditional REST APIs where authorization is often handled at the endpoint route level (e.g., <code>POST /api/admin/users</code>), GraphQL routes all traffic through a single endpoint. Authorization logic must be embedded deeply within individual field resolvers.</p>
+          
+          <blockquote>
+            "Security by obscurity in GraphQL schemas is fundamentally flawed. Introspection queries will eventually map your entire attack surface."
+          </blockquote>
+          
+          <p>Consider the following vulnerable mutation:</p>
+          
+          <pre><code>mutation UpdateUserPrivilege($userId: ID!, $role: String!) {
+  updateUserRole(id: $userId, role: $role) {
+    success
+    user {
+      id
+      role
+    }
+  }
+}</code></pre>
+          
+          <p>If the backend resolver for <code>updateUserRole</code> fails to validate the context of the requesting user (verifying they are actually an Admin), any authenticated user can craft this mutation and elevate their own privileges.</p>
+          
+          <h2>Exploitation via Introspection</h2>
+          <p>The first step in our methodology is dumping the schema. Even if introspection is disabled, tools like Clairvoyance can brute-force the schema based on common naming conventions.</p>
+          <p>Once the <code>updateUserRole</code> mutation is discovered, exploitation is trivial using Burp Suite or a simple cURL request. The lack of object-level authorization (BOLA/IDOR) allows the attacker to pass their own user ID alongside the "Admin" role string.</p>
+          
+          <h2>Mitigation Strategies</h2>
+          <p>To effectively secure GraphQL APIs, developers must adopt a defense-in-depth approach:</p>
+          <ul>
+            <li><strong>Centralize Authorization:</strong> Do not write auth logic inside resolvers. Use middleware or directives (like <code>@auth(requires: ADMIN)</code>) to abstract the check.</li>
+            <li><strong>Disable Introspection in Production:</strong> While not a silver bullet, it raises the bar for script kiddies.</li>
+            <li><strong>Implement Query Cost Analysis:</strong> Prevent DoS attacks by limiting the depth and complexity of nested queries.</li>
+          </ul>
+        </article>
+        
+        <!-- Section 3: Author Box -->
+        <div class="author-box reveal-scale delay-200">
+          <img src="https://loremflickr.com/200/200/hacker,portrait?lock=61" alt="Author" class="author-img">
+          <div>
+            <h4 class="mb-2">About The Author</h4>
+            <p class="text-muted small m-0">Senior Penetration Tester specializing in Web Application Security and Cloud Infrastructure. Passionate about uncovering logic flaws and building secure architectures.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section 4: Sidebar Widget Layout -->
+      <div class="col-lg-4 mt-5 mt-lg-0 reveal-fade-up delay-300">
+        <div class="sidebar-widget">
+          <h4 class="sidebar-title">Search Articles</h4>
+          <input type="text" class="cyber-input w-100" placeholder="Keywords...">
+        </div>
+        
+        <div class="sidebar-widget">
+          <h4 class="sidebar-title">Popular Tags</h4>
+          <div class="tag-cloud">
+            <a href="#">GraphQL</a>
+            <a href="#">Zero-Day</a>
+            <a href="#">Red Team</a>
+            <a href="#">AWS</a>
+            <a href="#">OSINT</a>
+            <a href="#">Bug Bounty</a>
+            <a href="#">Cryptography</a>
+          </div>
+        </div>
+        
+        <div class="sidebar-widget text-center p-4" style="background: linear-gradient(180deg, var(--surface-color), rgba(0,210,255,0.1));">
+          <i class="fas fa-shield-alt fs-1 text-primary mb-3"></i>
+          <h4>Need a Security Audit?</h4>
+          <p class="text-muted small mb-4">Don't leave your API security to chance. Let me test your endpoints.</p>
+          <a href="booking.html" class="btn-cyber btn-cyber-primary w-100">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5: Related Articles Strip -->
+  <section class="section-padding pt-0" style="background: rgba(0,0,0,0.2);">
+    <div class="container reveal-blur">
+      <h3 class="mb-4">Keep Reading</h3>
+      <div class="related-strip">
+        
+        <div class="related-card">
+          <img src="https://loremflickr.com/400/250/code,security?lock=62" alt="Post">
+          <div class="related-card-body">
+            <h5 class="fs-6 mb-2">Bypassing Modern WAFs</h5>
+            <a href="#" class="text-primary small text-decoration-none">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="related-card">
+          <img src="https://loremflickr.com/400/250/server,dark?lock=63" alt="Post">
+          <div class="related-card-body">
+            <h5 class="fs-6 mb-2">Active Directory Kerberoasting</h5>
+            <a href="#" class="text-primary small text-decoration-none">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="related-card">
+          <img src="https://loremflickr.com/400/250/mobile,app?lock=64" alt="Post">
+          <div class="related-card-body">
+            <h5 class="fs-6 mb-2">Frida Hooking for Beginners</h5>
+            <a href="#" class="text-primary small text-decoration-none">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <div class="related-card">
+          <img src="https://loremflickr.com/400/250/laptop,hacker?lock=65" alt="Post">
+          <div class="related-card-body">
+            <h5 class="fs-6 mb-2">Social Engineering 101</h5>
+            <a href="#" class="text-primary small text-decoration-none">Read More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="logo-container mb-4">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+              <circle cx="50" cy="45" r="15" fill="currentColor"/>
+              <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+            </svg>
+            <h2 class="logo-text">Cyber<span class="text-gradient">Sec</span></h2>
+          </div>
+          <p class="text-muted pe-md-5">Independent cybersecurity professional dedicated to protecting businesses from advanced persistent threats through rigorous ethical hacking.</p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Security Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-muted mb-3">Subscribe for the latest threat intelligence and security tips.</p>
+          <form class="d-flex gap-2">
+            <input type="email" class="cyber-input" placeholder="Email Address">
+            <button type="submit" class="btn-cyber btn-cyber-primary px-3"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="text-muted mb-0">&copy; 2026 CyberSec. All rights reserved.</p>
+        <a href="#" class="btn-cyber btn-cyber-outline py-2 px-3" aria-label="Back to Top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Penetration Tester | Services</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/layout.css">
+  
+  <style>
+    /* Services Page Specific Styles */
+    
+    /* 1. Services Hero */
+    .services-hero {
+      padding: 160px 0 80px;
+      position: relative;
+      background: var(--surface-color);
+      border-bottom: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+    
+    .hero-grid-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: 
+        linear-gradient(rgba(0, 210, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 210, 255, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: 0;
+      animation: panGrid 20s linear infinite;
+    }
+    
+    @keyframes panGrid {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(50px); }
+    }
+    
+    /* 2. Comprehensive Service List */
+    .service-list-item {
+      display: flex;
+      gap: 30px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border-color);
+      align-items: center;
+    }
+    
+    .service-list-item:last-child {
+      border-bottom: none;
+    }
+    
+    @media(max-width: 768px) {
+      .service-list-item { flex-direction: column; text-align: center; }
+    }
+    
+    .service-icon-large {
+      flex: 0 0 100px;
+      height: 100px;
+      background: linear-gradient(135deg, rgba(0, 210, 255, 0.1), rgba(0, 255, 204, 0.1));
+      border: 1px solid var(--color-primary);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--color-primary);
+      transition: all 0.3s ease;
+    }
+    
+    .service-list-item:hover .service-icon-large {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+    }
+    
+    /* 3. Tech Stack Matrix */
+    .tech-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+    }
+    
+    .tech-item {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      padding: 20px 10px;
+      text-align: center;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+    
+    .tech-item:hover {
+      background: var(--color-primary);
+      color: #000;
+      transform: translateY(-5px);
+    }
+    
+    /* 4. Assessment Methodology Cards */
+    .method-card {
+      background: rgba(0,0,0,0.2);
+      border-top: 3px solid var(--color-secondary);
+      padding: 30px;
+      height: 100%;
+    }
+    
+    [data-theme="light"] .method-card {
+      background: #f8f9fa;
+    }
+    
+    .method-step-num {
+      font-size: 4rem;
+      font-weight: 800;
+      color: rgba(0, 210, 255, 0.1);
+      position: absolute;
+      top: 10px; right: 20px;
+      line-height: 1;
+    }
+    
+    /* 5. Minimal CTA */
+    .minimal-cta {
+      border: 1px solid var(--border-color);
+      border-radius: 0;
+      border-left: 5px solid var(--color-primary);
+      padding: 60px;
+      background: var(--surface-color);
+      position: relative;
+    }
+    
+    .minimal-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -10px; right: -10px;
+      width: 40px; height: 40px;
+      border-bottom: 2px solid var(--color-primary);
+      border-right: 2px solid var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="cyber-header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo-container">
+        <!-- SVG Logo -->
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+          <circle cx="50" cy="45" r="15" fill="currentColor"/>
+          <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+        </svg>
+        <h1 class="logo-text">Cyber<span class="text-gradient">Sec</span></h1>
+      </div>
+      
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link-cyber">Home 1</a>
+        <a href="home-2.html" class="nav-link-cyber">Home 2</a>
+        <a href="about.html" class="nav-link-cyber">About</a>
+        <a href="services.html" class="nav-link-cyber active">Services</a>
+        <a href="blog.html" class="nav-link-cyber">Blog</a>
+        <a href="contact.html" class="nav-link-cyber">Contact</a>
+      </nav>
+      
+      <div class="header-controls">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-language"></i></button>
+        <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-md-inline-flex">Hire Me</a>
+        
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-link-cyber">Home 1</a>
+      <a href="home-2.html" class="nav-link-cyber">Home 2</a>
+      <a href="about.html" class="nav-link-cyber">About</a>
+      <a href="services.html" class="nav-link-cyber active">Services</a>
+      <a href="blog.html" class="nav-link-cyber">Blog</a>
+      <a href="contact.html" class="nav-link-cyber">Contact</a>
+      <a href="booking.html" class="btn-cyber btn-cyber-primary mt-4">Hire Me</a>
+    </nav>
+  </div>
+
+  <!-- Section 1: Hero -->
+  <section class="services-hero reveal-fade-up">
+    <div class="hero-grid-bg"></div>
+    <div class="container position-relative z-1 text-center">
+      <h1 class="fs-1 mb-3">Professional <span class="text-gradient">Security Services</span></h1>
+      <p class="text-muted max-w-700 mx-auto mb-0">I provide elite offensive security assessments tailored to discover vulnerabilities before malicious actors can weaponize them.</p>
+    </div>
+  </section>
+
+  <!-- Section 2: Service List (Detailed) -->
+  <section class="section-padding">
+    <div class="container">
+      
+      <div class="service-list-item reveal-slide-right">
+        <div class="service-icon-large overflow-hidden p-0 border-0"><img src="https://loremflickr.com/200/200/website,security?lock=60" alt="Web App Security" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div class="flex-grow-1">
+          <h3 class="fs-4">Web Application Penetration Testing</h3>
+          <p class="text-muted">A deep-dive assessment identifying logic flaws, injection vulnerabilities, and OWASP Top 10 risks in your custom web software.</p>
+          <div class="d-flex gap-2 flex-wrap mt-2">
+            <span class="badge bg-secondary text-light">SQLi</span>
+            <span class="badge bg-secondary text-light">XSS</span>
+            <span class="badge bg-secondary text-light">CSRF</span>
+          </div>
+        </div>
+        <div>
+          <a href="service-details.html" class="btn-cyber btn-cyber-outline">Details</a>
+        </div>
+      </div>
+      
+      <div class="service-list-item reveal-slide-right delay-100">
+        <div class="service-icon-large overflow-hidden p-0 border-0"><img src="https://loremflickr.com/200/200/network,infrastructure?lock=61" alt="Network Infrastructure" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div class="flex-grow-1">
+          <h3 class="fs-4">Network Infrastructure Assessment</h3>
+          <p class="text-muted">Simulating internal and external network attacks to find misconfigurations, weak protocols, and lateral movement paths.</p>
+          <div class="d-flex gap-2 flex-wrap mt-2">
+            <span class="badge bg-secondary text-light">Active Directory</span>
+            <span class="badge bg-secondary text-light">Firewalls</span>
+          </div>
+        </div>
+        <div>
+          <a href="service-details.html" class="btn-cyber btn-cyber-outline">Details</a>
+        </div>
+      </div>
+      
+      <div class="service-list-item reveal-slide-right delay-200">
+        <div class="service-icon-large overflow-hidden p-0 border-0"><img src="https://loremflickr.com/200/200/cloud,data?lock=62" alt="Cloud Security" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div class="flex-grow-1">
+          <h3 class="fs-4">Cloud Security Audit</h3>
+          <p class="text-muted">Reviewing AWS, Azure, and GCP environments for IAM misconfigurations, exposed storage buckets, and serverless vulnerabilities.</p>
+        </div>
+        <div>
+          <a href="service-details.html" class="btn-cyber btn-cyber-outline">Details</a>
+        </div>
+      </div>
+      
+      <div class="service-list-item reveal-slide-right delay-300">
+        <div class="service-icon-large overflow-hidden p-0 border-0"><img src="https://loremflickr.com/200/200/api,code?lock=63" alt="API Security" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div class="flex-grow-1">
+          <h3 class="fs-4">API Security Testing</h3>
+          <p class="text-muted">Rigorous testing of REST, GraphQL, and SOAP APIs to prevent broken object level authorization (BOLA) and data leaks.</p>
+        </div>
+        <div>
+          <a href="service-details.html" class="btn-cyber btn-cyber-outline">Details</a>
+        </div>
+      </div>
+      
+      <div class="service-list-item reveal-slide-right delay-400">
+        <div class="service-icon-large overflow-hidden p-0 border-0"><img src="https://loremflickr.com/200/200/smartphone,security?lock=64" alt="Mobile App Security" style="width: 100%; height: 100%; object-fit: cover;"></div>
+        <div class="flex-grow-1">
+          <h3 class="fs-4">Mobile App Security Assessment</h3>
+          <p class="text-muted">Static and dynamic analysis of iOS and Android applications to uncover hardcoded secrets and insecure data storage.</p>
+        </div>
+        <div>
+          <a href="service-details.html" class="btn-cyber btn-cyber-outline">Details</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Section 3: Assessment Methodology -->
+  <section class="section-padding" style="background: var(--surface-color);">
+    <div class="container">
+      <h2 class="fs-1 text-center mb-5 reveal-fade-up">Standardized <span class="text-gradient">Methodology</span></h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal-scale delay-100">
+          <div class="method-card position-relative">
+            <div class="method-step-num">1</div>
+            <h4 class="mb-3">Planning</h4>
+            <p class="text-muted small mb-0">Defining ROE, asset inventory, and threat modeling to focus on critical infrastructure.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal-scale delay-200">
+          <div class="method-card position-relative">
+            <div class="method-step-num">2</div>
+            <h4 class="mb-3">Discovery</h4>
+            <p class="text-muted small mb-0">Automated and manual probing for open ports, exposed interfaces, and legacy systems.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal-scale delay-300">
+          <div class="method-card position-relative">
+            <div class="method-step-num">3</div>
+            <h4 class="mb-3">Exploitation</h4>
+            <p class="text-muted small mb-0">Carefully extracting data or gaining shell access to demonstrate tangible business risk.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal-scale delay-400">
+          <div class="method-card position-relative">
+            <div class="method-step-num">4</div>
+            <h4 class="mb-3">Reporting</h4>
+            <p class="text-muted small mb-0">Delivering a comprehensive report with CVSS scoring and actionable remediation steps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Tech Stack Matrix -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0 reveal-blur">
+          <h2 class="fs-1">Tools of the <span class="text-gradient">Trade</span></h2>
+          <p class="text-muted">While custom scripting is my primary weapon, I utilize industry-standard tools to ensure total coverage during assessments.</p>
+        </div>
+        <div class="col-lg-7 reveal-fade-up">
+          <div class="tech-matrix">
+            <div class="tech-item">Burp Suite Pro</div>
+            <div class="tech-item">Metasploit</div>
+            <div class="tech-item">Nmap</div>
+            <div class="tech-item">Nessus</div>
+            <div class="tech-item">Wireshark</div>
+            <div class="tech-item">Ghidra</div>
+            <div class="tech-item">BloodHound</div>
+            <div class="tech-item">SQLmap</div>
+            <div class="tech-item">Postman</div>
+            <div class="tech-item">Frida</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Section: Industry Expertise -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal-slide-right">
+          <div class="position-relative">
+            <div class="glow-bg" style="position:absolute; top:-15px; left:-15px; right:-15px; bottom:-15px; background:radial-gradient(circle, var(--color-secondary) 0%, transparent 70%); opacity:0.15; border-radius: 20px; z-index:0; filter: blur(20px);"></div>
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop" alt="Industry Expertise" class="img-fluid rounded-4 shadow-lg position-relative z-1 animate-float" style="border: 1px solid var(--border-color); object-fit: cover; max-height: 450px; width: 100%;">
+          </div>
+        </div>
+        <div class="col-lg-6 reveal-fade-up">
+          <h2 class="fs-1 mb-4">Tailored for Your <span class="text-gradient">Industry</span></h2>
+          <p class="text-muted mb-4">Cyber threats vary dramatically across different sectors. I provide specialized penetration testing methodologies adapted to the unique regulatory and operational requirements of your industry.</p>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-3 d-flex align-items-start"><i class="fas fa-check-circle text-primary me-3 mt-1 fs-5"></i> <span><strong>FinTech & Banking:</strong> PCI-DSS compliance and financial data protection.</span></li>
+            <li class="mb-3 d-flex align-items-start"><i class="fas fa-check-circle text-primary me-3 mt-1 fs-5"></i> <span><strong>Healthcare:</strong> HIPAA-aligned assessments for patient data systems.</span></li>
+            <li class="mb-3 d-flex align-items-start"><i class="fas fa-check-circle text-primary me-3 mt-1 fs-5"></i> <span><strong>SaaS & Tech Startups:</strong> Securing multi-tenant architectures and APIs.</span></li>
+            <li class="d-flex align-items-start"><i class="fas fa-check-circle text-primary me-3 mt-1 fs-5"></i> <span><strong>E-Commerce:</strong> Protecting customer transactions and PII.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Section: Post-Assessment Support -->
+  <section class="section-padding" style="background: rgba(0,0,0,0.2);">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-2 order-lg-1 reveal-fade-up">
+          <h2 class="fs-1 mb-4">Continuous <span class="text-gradient">Support</span></h2>
+          <p class="text-muted mb-4">My job doesn't end when the report is delivered. I partner with your development and IT teams to ensure vulnerabilities are effectively patched and verified.</p>
+          <div class="d-flex flex-column gap-3">
+            <div class="cyber-card border-0 bg-transparent p-0">
+              <h4 class="fs-5"><i class="fas fa-tools text-secondary me-2"></i> Remediation Guidance</h4>
+              <p class="text-muted small m-0">Detailed, step-by-step instructions and code snippets to help your developers fix the identified issues.</p>
+            </div>
+            <div class="cyber-card border-0 bg-transparent p-0">
+              <h4 class="fs-5"><i class="fas fa-redo text-secondary me-2"></i> Retesting</h4>
+              <p class="text-muted small m-0">A complimentary retest within 30 days to verify that all high-risk vulnerabilities have been successfully remediated.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 reveal-slide-right delay-200">
+          <div class="position-relative">
+            <div class="glow-bg" style="position:absolute; top:-15px; left:-15px; right:-15px; bottom:-15px; background:radial-gradient(circle, var(--color-primary) 0%, transparent 70%); opacity:0.15; border-radius: 20px; z-index:0; filter: blur(20px);"></div>
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop" alt="Continuous Support" class="img-fluid rounded-4 shadow-lg position-relative z-1 animate-float" style="border: 1px solid var(--border-color); object-fit: cover; max-height: 450px; width: 100%; animation-delay: 1.5s;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Minimal CTA -->
+  <section class="section-padding" style="background: var(--surface-color);">
+    <div class="container reveal-fade-up">
+      <div class="minimal-cta d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="mb-4 mb-md-0">
+          <h2 class="fs-2 mb-2">Unsure which assessment you need?</h2>
+          <p class="text-muted m-0">Let's schedule a brief scoping call to determine your risk profile.</p>
+        </div>
+        <div>
+          <a href="booking.html" class="btn-cyber btn-cyber-primary px-4 py-3">Book Scoping Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="logo-container mb-4">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+              <circle cx="50" cy="45" r="15" fill="currentColor"/>
+              <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+            </svg>
+            <h2 class="logo-text">Cyber<span class="text-gradient">Sec</span></h2>
+          </div>
+          <p class="text-muted pe-md-5">Independent cybersecurity professional dedicated to protecting businesses from advanced persistent threats through rigorous ethical hacking.</p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Security Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-muted mb-3">Subscribe for the latest threat intelligence and security tips.</p>
+          <form class="d-flex gap-2">
+            <input type="email" class="cyber-input" placeholder="Email Address">
+            <button type="submit" class="btn-cyber btn-cyber-primary px-3"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="text-muted mb-0">&copy; 2026 CyberSec. All rights reserved.</p>
+        <a href="#" class="btn-cyber btn-cyber-outline py-2 px-3" aria-label="Back to Top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Penetration Tester | About Me</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/layout.css">
+  
+  <style>
+    /* About Page Specific Styles */
+    
+    /* 1. Inner Hero */
+    .inner-hero {
+      padding: 180px 0 100px;
+      text-align: center;
+      background: linear-gradient(to bottom, rgba(0, 210, 255, 0.05), transparent);
+      position: relative;
+    }
+    
+    .cyber-breadcrumb {
+      display: inline-flex;
+      background: var(--surface-color);
+      border: 1px solid var(--color-primary);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--color-primary);
+    }
+    
+    /* 2. Professional Journey */
+    .journey-image-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .journey-image-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 20px; right: -20px; bottom: -20px; left: 20px;
+      border: 2px solid var(--color-secondary);
+      border-radius: 12px;
+      z-index: -1;
+    }
+    
+    .stats-row {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    /* 3. Education / Alternate Certifications Layout */
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    .credential-box {
+      padding: 30px;
+      background: var(--surface-color);
+      border: 1px dashed var(--border-color);
+      border-radius: 8px;
+      position: relative;
+    }
+    
+    .credential-box:hover {
+      border-style: solid;
+      border-color: var(--color-primary);
+      box-shadow: 0 5px 20px rgba(0, 210, 255, 0.1);
+    }
+    
+    /* 4. Skills Progress */
+    .skill-bar-container {
+      margin-bottom: 25px;
+    }
+    
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .skill-track {
+      height: 8px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    [data-theme="light"] .skill-track {
+      background: #e2e8f0;
+    }
+    
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+      width: 0;
+      transition: width 1.5s cubic-bezier(0.1, 0.5, 0.2, 1);
+    }
+    
+    /* 5. Personal Mission / Quote */
+    .mission-section {
+      position: relative;
+      padding: 100px 0;
+      overflow: hidden;
+    }
+    
+    .mission-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('https://loremflickr.com/1920/1080/matrix,code?lock=15');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    
+    .mission-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="cyber-header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo-container">
+        <!-- SVG Logo -->
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+          <circle cx="50" cy="45" r="15" fill="currentColor"/>
+          <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+        </svg>
+        <h1 class="logo-text">Cyber<span class="text-gradient">Sec</span></h1>
+      </div>
+      
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link-cyber">Home 1</a>
+        <a href="home-2.html" class="nav-link-cyber">Home 2</a>
+        <a href="about.html" class="nav-link-cyber active">About</a>
+        <a href="services.html" class="nav-link-cyber">Services</a>
+        <a href="blog.html" class="nav-link-cyber">Blog</a>
+        <a href="contact.html" class="nav-link-cyber">Contact</a>
+      </nav>
+      
+      <div class="header-controls">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-language"></i></button>
+        <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-md-inline-flex">Hire Me</a>
+        
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-link-cyber">Home 1</a>
+      <a href="home-2.html" class="nav-link-cyber">Home 2</a>
+      <a href="about.html" class="nav-link-cyber active">About</a>
+      <a href="services.html" class="nav-link-cyber">Services</a>
+      <a href="blog.html" class="nav-link-cyber">Blog</a>
+      <a href="contact.html" class="nav-link-cyber">Contact</a>
+      <a href="booking.html" class="btn-cyber btn-cyber-primary mt-4">Hire Me</a>
+    </nav>
+  </div>
+
+  <!-- Section 1: Inner Hero -->
+  <section class="inner-hero reveal-fade-up">
+    <div class="container">
+      <div class="cyber-breadcrumb mb-4">
+        <span><i class="fas fa-home me-2"></i> Home / About Me</span>
+      </div>
+      <h1 class="fs-1 mb-3">The Hacker Behind The <span class="text-gradient">Screen</span></h1>
+      <p class="text-muted max-w-700 mx-auto">Discover my journey from self-taught enthusiast to a certified enterprise penetration tester helping organizations secure their most critical assets.</p>
+    </div>
+  </section>
+
+  <!-- Section 2: Professional Journey -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0 reveal-blur text-center text-lg-start">
+          <div class="journey-image-wrapper">
+            <img src="https://loremflickr.com/600/700/hacker,profile?lock=20" alt="My Workspace" class="img-fluid rounded-3" style="max-width: 90%;">
+          </div>
+        </div>
+        <div class="col-lg-6 reveal-slide-right">
+          <h2 class="fs-1 mb-4">From Curious Mind to <br><span class="text-gradient">Security Analyst</span></h2>
+          <p class="text-muted mb-4">My passion for cybersecurity started over a decade ago. I didn't just want to build software; I wanted to understand how it breaks. This curiosity led me down the rabbit hole of ethical hacking, reverse engineering, and exploit development.</p>
+          <p class="text-muted">Today, I operate as an independent offensive security specialist. I've helped startups, financial institutions, and healthcare providers uncover critical vulnerabilities before malicious actors could exploit them.</p>
+          
+          <div class="stats-row">
+            <div>
+              <h3 class="fs-2 text-gradient mb-1">10+</h3>
+              <p class="text-muted small m-0">Years Experience</p>
+            </div>
+            <div>
+              <h3 class="fs-2 text-gradient mb-1">45+</h3>
+              <p class="text-muted small m-0">Successful Audits</p>
+            </div>
+            <div>
+              <h3 class="fs-2 text-gradient mb-1">15</h3>
+              <p class="text-muted small m-0">CVEs Discovered</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Credentials (Different Layout from Home 1 Certs) -->
+  <section class="section-padding" style="background: rgba(0,0,0,0.2);">
+    <div class="container">
+      <div class="text-center mb-5 reveal-fade-up">
+        <h2 class="fs-1">Verified <span class="text-gradient">Expertise</span></h2>
+        <p class="text-muted">Continuous learning is the only way to stay ahead in cybersecurity.</p>
+      </div>
+      
+      <div class="credentials-grid">
+        <div class="credential-box reveal-scale delay-100">
+          <i class="fas fa-certificate text-primary fs-3 mb-3"></i>
+          <h4>eJPT v2</h4>
+          <p class="text-muted small mb-0">eLearnSecurity Junior Penetration Tester. Verified hands-on practical skills in network exploitation.</p>
+        </div>
+        <div class="credential-box reveal-scale delay-200">
+          <i class="fas fa-shield-alt text-secondary fs-3 mb-3"></i>
+          <h4>CompTIA Security+</h4>
+          <p class="text-muted small mb-0">Foundational mastery of risk management, threat mitigation, and core security protocols.</p>
+        </div>
+        <div class="credential-box reveal-scale delay-300">
+          <i class="fas fa-university text-primary fs-3 mb-3"></i>
+          <h4>B.Sc. Computer Science</h4>
+          <p class="text-muted small mb-0">Specialization in Information Assurance and Cryptography. Graduated with Honors.</p>
+        </div>
+        <div class="credential-box reveal-scale delay-400">
+          <i class="fas fa-bug text-secondary fs-3 mb-3"></i>
+          <h4>Burp Suite Certified</h4>
+          <p class="text-muted small mb-0">PortSwigger certification proving advanced web application vulnerability assessment capabilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Technical Arsenal (Skills) -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 mb-5 mb-lg-0 reveal-slide-right">
+          <h2 class="fs-1 mb-4">My Technical <span class="text-gradient">Arsenal</span></h2>
+          <p class="text-muted mb-4">I employ a blend of industry-standard automated tools and custom-built scripts to ensure comprehensive coverage during engagements. However, the most important tool is the hacker mindset.</p>
+          <a href="services.html" class="btn-cyber btn-cyber-outline">View My Services</a>
+        </div>
+        
+        <!-- Skill bars -->
+        <div class="col-lg-6 offset-lg-1 reveal-fade-up delay-200">
+          
+          <div class="skill-bar-container">
+            <div class="skill-info">
+              <span>Web Application Pentesting (OWASP)</span>
+              <span>95%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill skill-animate" data-width="95%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-bar-container">
+            <div class="skill-info">
+              <span>Network Exploitation</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill skill-animate" data-width="88%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-bar-container">
+            <div class="skill-info">
+              <span>Python / Bash Scripting</span>
+              <span>92%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill skill-animate" data-width="92%"></div>
+            </div>
+          </div>
+          
+          <div class="skill-bar-container">
+            <div class="skill-info">
+              <span>Reverse Engineering (Mobile/Malware)</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-fill skill-animate" data-width="75%"></div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Personal Mission -->
+  <section class="mission-section reveal-blur">
+    <div class="mission-bg"></div>
+    <div class="container mission-content">
+      <i class="fas fa-lock text-gradient fs-1 mb-4 animate-float"></i>
+      <h2 class="fs-1 mb-4" style="color: var(--text-color);">"My mission is simple: find your vulnerabilities before the bad guys do."</h2>
+      <p class="text-muted fs-5 mb-5">In an era where a single breach can cost millions and destroy a reputation built over decades, proactive security is not an option—it is a necessity.</p>
+      <a href="contact.html" class="btn-cyber btn-cyber-primary btn-lg">Secure Your Business</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="logo-container mb-4">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+              <circle cx="50" cy="45" r="15" fill="currentColor"/>
+              <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+            </svg>
+            <h2 class="logo-text">Cyber<span class="text-gradient">Sec</span></h2>
+          </div>
+          <p class="text-muted pe-md-5">Independent cybersecurity professional dedicated to protecting businesses from advanced persistent threats through rigorous ethical hacking.</p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Security Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-muted mb-3">Subscribe for the latest threat intelligence and security tips.</p>
+          <form class="d-flex gap-2">
+            <input type="email" class="cyber-input" placeholder="Email Address">
+            <button type="submit" class="btn-cyber btn-cyber-primary px-3"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="text-muted mb-0">&copy; 2026 CyberSec. All rights reserved.</p>
+        <a href="#" class="btn-cyber btn-cyber-outline py-2 px-3" aria-label="Back to Top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Skill Bar Animation specific to About page
+    document.addEventListener('DOMContentLoaded', () => {
+      const skillBars = document.querySelectorAll('.skill-animate');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            let targetWidth = entry.target.getAttribute('data-width');
+            entry.target.style.width = targetWidth;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      skillBars.forEach(bar => observer.observe(bar));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance Penetration Tester | Book an Audit</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/layout.css">
+  
+  <style>
+    /* Booking Specific Styles */
+    
+    /* 1. Header Block */
+    .booking-hero {
+      padding: 160px 0 60px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0, 210, 255, 0.05), transparent);
+    }
+    
+    /* 2. Calendar UI Simulation */
+    .calendar-container {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+    
+    .day-name {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .day-cell {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .day-cell:hover:not(.disabled) {
+      background: rgba(0, 210, 255, 0.2);
+    }
+    
+    .day-cell.active {
+      background: var(--color-primary);
+      color: #000;
+      box-shadow: 0 0 15px var(--color-primary);
+    }
+    
+    .day-cell.disabled {
+      color: var(--border-color);
+      cursor: not-allowed;
+      text-decoration: line-through;
+    }
+    
+    /* 3. Booking Form */
+    .booking-form {
+      background: var(--surface-color);
+      border-left: 1px solid var(--border-color);
+      padding: 40px;
+      height: 100%;
+    }
+    
+    @media(max-width: 991px) {
+      .booking-form { border-left: none; border-top: 1px solid var(--border-color); }
+    }
+    
+    /* 4. Process Flow (Horizontal) */
+    .flow-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+    }
+    
+    .flow-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 5%;
+      right: 5%;
+      height: 2px;
+      background: dashed 2px var(--border-color);
+      z-index: 0;
+    }
+    
+    .flow-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      width: 25%;
+    }
+    
+    .flow-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--bg-color);
+      border: 2px solid var(--color-secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+      color: var(--color-secondary);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+    }
+    
+    @media(max-width: 768px) {
+      .flow-wrapper { flex-direction: column; gap: 40px; }
+      .flow-wrapper::before { display: none; }
+      .flow-step { width: 100%; }
+    }
+    
+    /* 5. Alternative Contact Card */
+    .alt-contact-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      background: url('https://loremflickr.com/1920/400/network,dark?lock=85') center/cover;
+      position: relative;
+    }
+    
+    .alt-contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10,14,23,0.85);
+      border-radius: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="cyber-header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="logo-container">
+        <!-- SVG Logo -->
+        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+          <circle cx="50" cy="45" r="15" fill="currentColor"/>
+          <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+        </svg>
+        <h1 class="logo-text">Cyber<span class="text-gradient">Sec</span></h1>
+      </div>
+      
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link-cyber">Home 1</a>
+        <a href="home-2.html" class="nav-link-cyber">Home 2</a>
+        <a href="about.html" class="nav-link-cyber">About</a>
+        <a href="services.html" class="nav-link-cyber">Services</a>
+        <a href="blog.html" class="nav-link-cyber">Blog</a>
+        <a href="contact.html" class="nav-link-cyber">Contact</a>
+      </nav>
+      
+      <div class="header-controls">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-language"></i></button>
+        <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-md-inline-flex">Hire Me</a>
+        
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="index.html" class="nav-link-cyber">Home 1</a>
+      <a href="home-2.html" class="nav-link-cyber">Home 2</a>
+      <a href="about.html" class="nav-link-cyber">About</a>
+      <a href="services.html" class="nav-link-cyber">Services</a>
+      <a href="blog.html" class="nav-link-cyber">Blog</a>
+      <a href="contact.html" class="nav-link-cyber">Contact</a>
+      <a href="booking.html" class="btn-cyber btn-cyber-primary mt-4">Hire Me</a>
+    </nav>
+  </div>
+
+  <!-- Section 1: Hero -->
+  <section class="booking-hero reveal-fade-up">
+    <div class="container">
+      <h1 class="fs-1 mb-3">Schedule a <span class="text-gradient">Scoping Call</span></h1>
+      <p class="text-muted max-w-700 mx-auto">Select a time that works for you. During this free 30-minute consultation, we'll discuss your infrastructure, threat model, and determine the right assessment scope.</p>
+    </div>
+  </section>
+
+  <!-- Section 2 & 3: Interactive Calendar + Form Layout -->
+  <section class="section-padding pt-0">
+    <div class="container reveal-scale delay-100">
+      <div class="row g-0 calendar-container">
+        <!-- Calendar Side -->
+        <div class="col-lg-6 pe-lg-4">
+          <div class="calendar-header">
+            <button class="icon-btn"><i class="fas fa-chevron-left"></i></button>
+            <h4 class="m-0">November 2026</h4>
+            <button class="icon-btn"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="days-grid">
+            <div class="day-name">Su</div><div class="day-name">Mo</div><div class="day-name">Tu</div>
+            <div class="day-name">We</div><div class="day-name">Th</div><div class="day-name">Fr</div><div class="day-name">Sa</div>
+            
+            <div class="day-cell disabled">1</div><div class="day-cell disabled">2</div><div class="day-cell disabled">3</div>
+            <div class="day-cell disabled">4</div><div class="day-cell disabled">5</div><div class="day-cell disabled">6</div>
+            <div class="day-cell disabled">7</div><div class="day-cell disabled">8</div><div class="day-cell disabled">9</div>
+            <div class="day-cell">10</div><div class="day-cell">11</div><div class="day-cell">12</div>
+            <div class="day-cell">13</div><div class="day-cell active">14</div><div class="day-cell">15</div>
+            <div class="day-cell">16</div><div class="day-cell disabled">17</div><div class="day-cell disabled">18</div>
+            <div class="day-cell">19</div><div class="day-cell">20</div><div class="day-cell">21</div>
+            <div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell">24</div>
+            <div class="day-cell">25</div><div class="day-cell disabled">26</div><div class="day-cell disabled">27</div>
+            <div class="day-cell disabled">28</div><div class="day-cell">29</div><div class="day-cell">30</div>
+          </div>
+          
+          <div class="mt-4">
+            <h5 class="fs-6 mb-3">Available Slots on Nov 14:</h5>
+            <div class="d-flex gap-2 flex-wrap">
+              <button class="btn btn-outline-secondary text-light">09:00 AM</button>
+              <button class="btn btn-cyber-primary text-dark">11:30 AM</button>
+              <button class="btn btn-outline-secondary text-light">02:00 PM</button>
+              <button class="btn btn-outline-secondary text-light">04:30 PM</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Form Side -->
+        <div class="col-lg-6">
+          <form class="booking-form">
+            <h4 class="mb-4">Your Details</h4>
+            
+            <div class="mb-3">
+              <label class="form-label text-muted small">Full Name</label>
+              <input type="text" class="cyber-input" required>
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label text-muted small">Work Email</label>
+              <input type="email" class="cyber-input" required>
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label text-muted small">Company Name</label>
+              <input type="text" class="cyber-input">
+            </div>
+            
+            <div class="mb-4">
+              <label class="form-label text-muted small">What are we securing?</label>
+              <select class="cyber-input">
+                <option>Web Application</option>
+                <option>Mobile Application</option>
+                <option>Cloud Infrastructure</option>
+                <option>Internal Network</option>
+                <option>Undecided / Need Advice</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="btn-cyber btn-cyber-primary w-100">Confirm Booking</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Process Flow -->
+  <section class="section-padding" style="background: rgba(0,0,0,0.2);">
+    <div class="container">
+      <h2 class="fs-2 text-center mb-5 reveal-blur">What happens next?</h2>
+      
+      <div class="flow-wrapper reveal-slide-right delay-200">
+        
+        <div class="flow-step">
+          <div class="flow-icon"><i class="fas fa-video"></i></div>
+          <h5>Scoping Call</h5>
+          <p class="text-muted small">We discuss your infrastructure and define the rules of engagement.</p>
+        </div>
+        
+        <div class="flow-step">
+          <div class="flow-icon"><i class="fas fa-file-signature"></i></div>
+          <h5>Proposal & NDA</h5>
+          <p class="text-muted small">I send over a detailed SOW and we sign mutual NDAs.</p>
+        </div>
+        
+        <div class="flow-step">
+          <div class="flow-icon"><i class="fas fa-terminal"></i></div>
+          <h5>Execution</h5>
+          <p class="text-muted small">The penetration test begins securely within the agreed timeframe.</p>
+        </div>
+        
+        <div class="flow-step">
+          <div class="flow-icon"><i class="fas fa-file-pdf"></i></div>
+          <h5>Reporting</h5>
+          <p class="text-muted small">You receive an actionable report and a debriefing session.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Alternative Contact -->
+  <section class="section-padding">
+    <div class="container reveal-fade-up">
+      <div class="alt-contact-card text-center text-md-start">
+        <div class="position-relative z-1">
+          <h2 class="text-white mb-2">Prefer to send an email?</h2>
+          <p class="text-white opacity-75 m-0">If you have a pre-written RFP or scope document, you can bypass the booking and email me directly.</p>
+        </div>
+        <div class="position-relative z-1 text-center">
+          <a href="mailto:secure@cybersec.com" class="btn-cyber btn-cyber-outline fs-5 px-5 py-3 bg-dark">secure@cybersec.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="logo-container mb-4">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+              <circle cx="50" cy="45" r="15" fill="currentColor"/>
+              <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+            </svg>
+            <h2 class="logo-text">Cyber<span class="text-gradient">Sec</span></h2>
+          </div>
+          <p class="text-muted pe-md-5">Independent cybersecurity professional dedicated to protecting businesses from advanced persistent threats through rigorous ethical hacking.</p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="blog.html">Security Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-muted mb-3">Subscribe for the latest threat intelligence and security tips.</p>
+          <form class="d-flex gap-2">
+            <input type="email" class="cyber-input" placeholder="Email Address">
+            <button type="submit" class="btn-cyber btn-cyber-primary px-3"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="text-muted mb-0">&copy; 2026 CyberSec. All rights reserved.</p>
+        <a href="#" class="btn-cyber btn-cyber-outline py-2 px-3" aria-label="Back to Top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

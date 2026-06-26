@@ -1,0 +1,72 @@
+/* Unique Animations */
+
+/* 1. Fade Up */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 2. Blur Reveal */
+.reveal-blur {
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 1s ease, filter 1s ease;
+}
+.reveal-blur.active {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* 3. Scale Up */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 4. Slide Right */
+.reveal-slide-right {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-slide-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 5. Glow Pulse Continuous */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px rgba(0, 210, 255, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 210, 255, 0.6); }
+  100% { box-shadow: 0 0 5px rgba(0, 210, 255, 0.2); }
+}
+.animate-glow {
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+/* 6. Floating Element */
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+.animate-float {
+  animation: floatY 4s infinite ease-in-out;
+}
+
+/* Delay Utility */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
