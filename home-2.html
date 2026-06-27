@@ -134,8 +134,9 @@
     /* 4. Compliance Frameworks */
     .compliance-marquee {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 30px;
-      overflow: hidden;
       padding: 20px 0;
     }
     
@@ -208,7 +209,7 @@
       
       <div class="header-controls">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
-        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-language"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-arrow-right-arrow-left"></i></button>
         <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-md-inline-flex">Hire Me</a>
         
         <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">
@@ -290,7 +291,7 @@
   </section>
 
   <!-- Section 3: Workflow Timeline -->
-  <section id="workflow" class="section-padding" style="background: rgba(0,0,0,0.2);">
+  <section id="workflow" class="section-padding" style="background: var(--section-alt-bg);">
     <div class="container">
       <div class="text-center mb-5 reveal-fade-up">
         <h2 class="fs-1">My Tactical <span class="text-gradient">Approach</span></h2>
@@ -360,7 +361,7 @@
   </section>
 
   <!-- Section 5: Client Success Stories -->
-  <section class="section-padding" style="background: rgba(0,0,0,0.2);">
+  <section class="section-padding" style="background: var(--section-alt-bg);">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0 reveal-blur">
@@ -372,7 +373,7 @@
             <i class="fas fa-quote-right quote-icon"></i>
             <p class="fs-5 mb-4 position-relative z-1" style="color: var(--text-color);">"The depth of the penetration test we received was incredible. Not only did we find a severe zero-day in our internal API, but the remediation steps provided were clear enough for our junior devs to implement immediately."</p>
             <div class="d-flex align-items-center gap-3">
-              <div style="width:50px; height:50px; background:var(--color-primary); border-radius:50%;"></div>
+              <div style="width:50px; height:50px; background:var(--color-primary); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#000; font-size: 1.5rem;"><i class="fas fa-user-tie"></i></div>
               <div>
                 <h5 class="m-0">CTO, Healthcare SaaS</h5>
                 <small class="text-muted">Series B Startup</small>

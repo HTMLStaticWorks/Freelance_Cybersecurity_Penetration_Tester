@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freelance Penetration Tester | Blog</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/layout.css">
-  
+
   <style>
     /* Blog Specific Styles */
-    
+
     /* 1. Blog Hero */
     .blog-hero {
       padding: 150px 0 60px;
       position: relative;
     }
-    
+
     .blog-hero::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: radial-gradient(circle at center, rgba(0, 210, 255, 0.05) 0%, transparent 60%);
       z-index: -1;
     }
-    
+
     .search-bar {
       position: relative;
       max-width: 500px;
       margin: 0 auto;
     }
-    
+
     .search-bar input {
       padding-right: 50px;
       border-radius: 30px;
     }
-    
+
     .search-bar button {
       position: absolute;
       right: 5px;
@@ -56,7 +61,7 @@
       height: 40px;
       border-radius: 50%;
     }
-    
+
     /* 2. Featured Post */
     .featured-post-card {
       display: flex;
@@ -66,32 +71,34 @@
       overflow: hidden;
       transition: box-shadow 0.3s ease;
     }
-    
+
     .featured-post-card:hover {
       box-shadow: 0 10px 40px rgba(0, 210, 255, 0.1);
     }
-    
+
     @media(max-width: 991px) {
-      .featured-post-card { flex-direction: column; }
+      .featured-post-card {
+        flex-direction: column;
+      }
     }
-    
+
     .featured-img-wrap {
       flex: 1;
       position: relative;
       overflow: hidden;
     }
-    
+
     .featured-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    
+
     .featured-post-card:hover .featured-img-wrap img {
       transform: scale(1.05);
     }
-    
+
     .featured-content {
       flex: 1;
       padding: 50px;
@@ -99,7 +106,7 @@
       flex-direction: column;
       justify-content: center;
     }
-    
+
     .post-category {
       background: rgba(0, 210, 255, 0.1);
       color: var(--color-primary);
@@ -112,19 +119,19 @@
       display: inline-block;
       margin-bottom: 20px;
     }
-    
+
     /* 3. Blog Grid */
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 30px;
     }
-    
+
     .blog-card {
       background: transparent;
       border: none;
     }
-    
+
     .blog-card-img {
       border-radius: 16px;
       overflow: hidden;
@@ -132,19 +139,19 @@
       position: relative;
       aspect-ratio: 16/10;
     }
-    
+
     .blog-card-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: filter 0.3s ease, transform 0.5s ease;
     }
-    
+
     .blog-card:hover .blog-card-img img {
       filter: brightness(1.1);
       transform: scale(1.02);
     }
-    
+
     .blog-meta {
       display: flex;
       align-items: center;
@@ -153,56 +160,58 @@
       color: var(--text-muted);
       margin-bottom: 10px;
     }
-    
+
     .blog-title {
       font-size: 1.25rem;
       color: var(--text-color);
       transition: color 0.3s ease;
     }
-    
+
     .blog-card:hover .blog-title {
       color: var(--color-primary);
     }
-    
+
     /* 4. Newsletter Block */
     .newsletter-block {
-      background: linear-gradient(90deg, rgba(10,14,23,0.9), rgba(18,24,38,0.9)), url('https://loremflickr.com/1920/400/security,code?lock=55') center/cover;
+      background: linear-gradient(90deg, rgba(10, 14, 23, 0.9), rgba(18, 24, 38, 0.9)), url('https://loremflickr.com/1920/400/security,code?lock=55') center/cover;
       border: 1px solid var(--border-color);
       border-radius: 24px;
       padding: 80px 40px;
       text-align: center;
       color: #ffffff;
     }
-    
+
     .newsletter-block h2 {
       color: #ffffff !important;
     }
-    
+
     .newsletter-block p.text-muted {
       color: rgba(255, 255, 255, 0.7) !important;
     }
-    
+
     .newsletter-block .cyber-input {
       background: rgba(255, 255, 255, 0.1) !important;
       color: #ffffff !important;
       border-color: rgba(255, 255, 255, 0.2) !important;
     }
-    
+
     .newsletter-block .cyber-input::placeholder {
       color: rgba(255, 255, 255, 0.5) !important;
     }
-    
+
     .newsletter-form {
       max-width: 500px;
       margin: 0 auto;
       display: flex;
       gap: 10px;
     }
-    
+
     @media(max-width: 576px) {
-      .newsletter-form { flex-direction: column; }
+      .newsletter-form {
+        flex-direction: column;
+      }
     }
-    
+
     /* 5. Minimal Pagination CTA */
     .pagination-cta {
       display: flex;
@@ -212,7 +221,7 @@
       padding: 40px 0;
       border-top: 1px solid var(--border-color);
     }
-    
+
     .page-btn {
       width: 45px;
       height: 45px;
@@ -225,14 +234,16 @@
       color: var(--text-color);
       transition: all 0.3s ease;
     }
-    
-    .page-btn:hover, .page-btn.active {
+
+    .page-btn:hover,
+    .page-btn.active {
       background: var(--color-primary);
       color: #000;
       border-color: var(--color-primary);
     }
   </style>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -241,13 +252,14 @@
       <div class="logo-container">
         <!-- SVG Logo -->
         <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
-          <circle cx="50" cy="45" r="15" fill="currentColor"/>
-          <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+          <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor"
+            stroke-width="6" />
+          <circle cx="50" cy="45" r="15" fill="currentColor" />
+          <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4" />
         </svg>
         <h1 class="logo-text">Cyber<span class="text-gradient">Sec</span></h1>
       </div>
-      
+
       <nav class="desktop-nav">
         <a href="index.html" class="nav-link-cyber">Home 1</a>
         <a href="home-2.html" class="nav-link-cyber">Home 2</a>
@@ -256,12 +268,12 @@
         <a href="blog.html" class="nav-link-cyber active">Blog</a>
         <a href="contact.html" class="nav-link-cyber">Contact</a>
       </nav>
-      
+
       <div class="header-controls">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
-        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-language"></i></button>
+        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-arrow-right-arrow-left"></i></button>
         <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-md-inline-flex">Hire Me</a>
-        
+
         <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -286,8 +298,9 @@
   <section class="blog-hero reveal-fade-up">
     <div class="container text-center">
       <h1 class="fs-1 mb-4">Threat <span class="text-gradient">Intelligence</span></h1>
-      <p class="text-muted max-w-700 mx-auto mb-5">Insights, zero-day analysis, and ethical hacking tutorials from the frontlines of offensive cybersecurity.</p>
-      
+      <p class="text-muted max-w-700 mx-auto mb-5">Insights, zero-day analysis, and ethical hacking tutorials from the
+        frontlines of offensive cybersecurity.</p>
+
       <div class="search-bar">
         <input type="text" class="cyber-input" placeholder="Search articles, CVEs, tools...">
         <button type="submit"><i class="fas fa-search"></i></button>
@@ -299,10 +312,10 @@
   <section class="section-padding pt-0">
     <div class="container reveal-scale delay-100">
       <h2 class="fs-3 mb-4">Featured Analysis</h2>
-      
+
       <div class="featured-post-card">
         <div class="featured-img-wrap">
-          <img src="https://loremflickr.com/800/600/hacker,code?lock=50" alt="Zero Day Exploit">
+          <img src="https://images.pexels.com/photos/5473960/pexels-photo-5473960.jpeg" alt="Zero Day Exploit">
         </div>
         <div class="featured-content">
           <div>
@@ -311,7 +324,8 @@
           <a href="blog-details.html">
             <h3 class="fs-2 mb-3 text-color-inherit">Deconstructing the Latest GraphQL Authorization Bypass</h3>
           </a>
-          <p class="text-muted mb-4">An in-depth technical analysis of a novel authorization bypass technique targeting poorly configured GraphQL mutations in modern SaaS applications. Includes PoC and mitigation strategies.</p>
+          <p class="text-muted mb-4">An in-depth technical analysis of a novel authorization bypass technique targeting
+            poorly configured GraphQL mutations in modern SaaS applications. Includes PoC and mitigation strategies.</p>
           <div class="blog-meta mt-auto">
             <span><i class="fas fa-calendar-alt me-2"></i> Oct 24, 2026</span>
             <span><i class="fas fa-clock me-2"></i> 12 min read</span>
@@ -325,13 +339,13 @@
   <section class="section-padding pt-0">
     <div class="container">
       <h2 class="fs-3 mb-5">Latest Articles</h2>
-      
+
       <div class="blog-grid">
-        
+
         <div class="blog-card reveal-fade-up delay-100">
           <a href="blog-details.html">
             <div class="blog-card-img">
-              <img src="https://loremflickr.com/600/400/cloud,security?lock=51" alt="Cloud Security">
+              <img src="https://images.pexels.com/photos/6570858/pexels-photo-6570858.jpeg" alt="Cloud Security">
               <span class="post-category position-absolute top-0 start-0 m-3">Cloud</span>
             </div>
             <div class="blog-meta">
@@ -341,11 +355,11 @@
             <h3 class="blog-title">AWS IAM Privilege Escalation Paths Explained</h3>
           </a>
         </div>
-        
+
         <div class="blog-card reveal-fade-up delay-200">
           <a href="blog-details.html">
             <div class="blog-card-img">
-              <img src="https://loremflickr.com/600/400/network,cable?lock=52" alt="Active Directory">
+              <img src="https://images.pexels.com/photos/7964254/pexels-photo-7964254.jpeg" alt="Active Directory">
               <span class="post-category position-absolute top-0 start-0 m-3">Red Team</span>
             </div>
             <div class="blog-meta">
@@ -355,11 +369,11 @@
             <h3 class="blog-title">Owning Active Directory: From LLMNR Poisoning to Domain Admin</h3>
           </a>
         </div>
-        
+
         <div class="blog-card reveal-fade-up delay-300">
           <a href="blog-details.html">
             <div class="blog-card-img">
-              <img src="https://loremflickr.com/600/400/mobile,app?lock=53" alt="Mobile App">
+              <img src="https://images.pexels.com/photos/15092/pexels-photo.jpg" alt="Mobile App">
               <span class="post-category position-absolute top-0 start-0 m-3">Mobile</span>
             </div>
             <div class="blog-meta">
@@ -369,11 +383,11 @@
             <h3 class="blog-title">Reverse Engineering Android APKs with Frida</h3>
           </a>
         </div>
-        
+
         <div class="blog-card reveal-fade-up delay-400">
           <a href="blog-details.html">
             <div class="blog-card-img">
-              <img src="https://loremflickr.com/600/400/laptop,hacker?lock=54" alt="Social Engineering">
+              <img src="https://images.pexels.com/photos/5475758/pexels-photo-5475758.jpeg" alt="Social Engineering">
               <span class="post-category position-absolute top-0 start-0 m-3">OSINT</span>
             </div>
             <div class="blog-meta">
@@ -383,7 +397,35 @@
             <h3 class="blog-title">Advanced OSINT Techniques for Phishing Campaigns</h3>
           </a>
         </div>
-        
+
+        <div class="blog-card reveal-fade-up delay-500">
+          <a href="blog-details.html">
+            <div class="blog-card-img">
+              <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg" alt="Network Security">
+              <span class="post-category position-absolute top-0 start-0 m-3">Network</span>
+            </div>
+            <div class="blog-meta">
+              <span>Sep 15, 2026</span>
+              <span>8 min read</span>
+            </div>
+            <h3 class="blog-title">Exploiting Misconfigured Firewalls: A Case Study</h3>
+          </a>
+        </div>
+
+        <div class="blog-card reveal-fade-up delay-600">
+          <a href="blog-details.html">
+            <div class="blog-card-img">
+              <img src="https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg" alt="Web Application">
+              <span class="post-category position-absolute top-0 start-0 m-3">Web App</span>
+            </div>
+            <div class="blog-meta">
+              <span>Sep 02, 2026</span>
+              <span>14 min read</span>
+            </div>
+            <h3 class="blog-title">Bypassing Modern WAFs with Obfuscated Payloads</h3>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -394,7 +436,8 @@
       <div class="newsletter-block">
         <i class="fas fa-envelope-open-text fs-1 text-primary mb-4 animate-float"></i>
         <h2 class="fs-2 mb-3">Join The Inner Circle</h2>
-        <p class="text-muted mb-5">Subscribe to get monthly zero-day write-ups and exclusive ethical hacking tutorials delivered straight to your inbox.</p>
+        <p class="text-muted mb-5">Subscribe to get monthly zero-day write-ups and exclusive ethical hacking tutorials
+          delivered straight to your inbox.</p>
         <form class="newsletter-form">
           <input type="email" class="cyber-input flex-grow-1" placeholder="Enter your email address" required>
           <button type="submit" class="btn-cyber btn-cyber-primary px-4">Subscribe</button>
@@ -422,13 +465,15 @@
         <div class="col-lg-4">
           <div class="logo-container mb-4">
             <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
-              <circle cx="50" cy="45" r="15" fill="currentColor"/>
-              <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+              <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none"
+                stroke="currentColor" stroke-width="6" />
+              <circle cx="50" cy="45" r="15" fill="currentColor" />
+              <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4" />
             </svg>
             <h2 class="logo-text">Cyber<span class="text-gradient">Sec</span></h2>
           </div>
-          <p class="text-muted pe-md-5">Independent cybersecurity professional dedicated to protecting businesses from advanced persistent threats through rigorous ethical hacking.</p>
+          <p class="text-muted pe-md-5">Independent cybersecurity professional dedicated to protecting businesses from
+            advanced persistent threats through rigorous ethical hacking.</p>
           <div class="social-icons mt-4">
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -463,10 +508,11 @@
           </form>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <p class="text-muted mb-0">&copy; 2026 CyberSec. All rights reserved.</p>
-        <a href="#" class="btn-cyber btn-cyber-outline py-2 px-3" aria-label="Back to Top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
+        <a href="#" class="btn-cyber btn-cyber-outline py-2 px-3" aria-label="Back to Top"
+          onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
           <i class="fas fa-arrow-up"></i>
         </a>
       </div>
@@ -476,4 +522,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
