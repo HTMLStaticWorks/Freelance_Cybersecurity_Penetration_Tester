@@ -1,49 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Theme Toggle Logic
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+  const themeToggles = document.querySelectorAll('#theme-toggle, .theme-toggle');
   
   // Check local storage for theme
   const currentTheme = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-theme', currentTheme);
-  updateThemeIcon(currentTheme);
+  updateThemeIcons(currentTheme);
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
+  themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
       let theme = document.documentElement.getAttribute('data-theme');
       let newTheme = theme === 'dark' ? 'light' : 'dark';
       
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
+      updateThemeIcons(newTheme);
+    });
+  });
+
+  function updateThemeIcons(theme) {
+    themeToggles.forEach(toggle => {
+      const icon = toggle.querySelector('i');
+      if (!icon) return;
+      if (theme === 'light') {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      }
     });
   }
 
-  function updateThemeIcon(theme) {
-    if (!themeIcon) return;
-    if (theme === 'light') {
-      themeIcon.classList.remove('fa-sun');
-      themeIcon.classList.add('fa-moon');
-    } else {
-      themeIcon.classList.remove('fa-moon');
-      themeIcon.classList.add('fa-sun');
-    }
-  }
-
   // RTL Toggle Logic
-  const rtlToggle = document.getElementById('rtl-toggle');
+  const rtlToggles = document.querySelectorAll('#rtl-toggle, .rtl-toggle');
   const currentDir = localStorage.getItem('dir') || 'ltr';
   document.documentElement.setAttribute('dir', currentDir);
   
-  if (rtlToggle) {
-    rtlToggle.addEventListener('click', () => {
+  rtlToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
       let dir = document.documentElement.getAttribute('dir');
       let newDir = dir === 'ltr' ? 'rtl' : 'ltr';
       
       document.documentElement.setAttribute('dir', newDir);
       localStorage.setItem('dir', newDir);
     });
-  }
+  });
 
   // Sticky Header Logic
   const header = document.querySelector('.cyber-header');

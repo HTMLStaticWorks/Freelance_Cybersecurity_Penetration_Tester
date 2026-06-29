@@ -160,15 +160,17 @@
   <!-- Header -->
   <header class="cyber-header">
     <div class="container d-flex justify-content-between align-items-center">
-      <div class="logo-container">
-        <!-- SVG Logo -->
-        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
-          <circle cx="50" cy="45" r="15" fill="currentColor"/>
-          <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
-        </svg>
-        <h1 class="logo-text">Cyber<span class="text-gradient">Sec</span></h1>
-      </div>
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="logo-container">
+          <!-- SVG Logo -->
+          <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
+            <circle cx="50" cy="45" r="15" fill="currentColor"/>
+            <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
+          </svg>
+          <h1 class="logo-text">Cyber<span class="text-gradient">Sec</span></h1>
+        </div>
+      </a>
       
       <nav class="desktop-nav">
         <a href="index.html" class="nav-link-cyber active">Home 1</a>
@@ -180,9 +182,9 @@
       </nav>
       
       <div class="header-controls">
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
-        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-arrow-right-arrow-left"></i></button>
-        <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-md-inline-flex">Hire Me</a>
+        <button id="theme-toggle" class="icon-btn theme-toggle d-none d-lg-flex" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button id="rtl-toggle" class="icon-btn rtl-toggle d-none d-lg-flex" aria-label="Toggle RTL"><i class="fas fa-arrow-right-arrow-left"></i></button>
+        <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-lg-inline-flex">Hire Me</a>
         
         <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -194,6 +196,10 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="mobile-menu">
     <nav class="mobile-nav">
+      <div class="d-flex gap-3 mb-4 justify-content-center">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-arrow-right-arrow-left"></i></button>
+      </div>
       <a href="index.html" class="nav-link-cyber active">Home 1</a>
       <a href="home-2.html" class="nav-link-cyber">Home 2</a>
       <a href="about.html" class="nav-link-cyber">About</a>
@@ -220,7 +226,7 @@
         </div>
         <div class="col-lg-6 reveal-scale delay-200">
           <div class="hero-image-wrapper">
-            <img src="https://loremflickr.com/800/800/cybersecurity,hacker?lock=1" alt="Penetration Testing" class="hero-image animate-float">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80" alt="Penetration Testing" class="hero-image animate-float">
             <!-- Floating element -->
             <div class="glass-panel position-absolute p-3" style="bottom: 10%; left: -5%; display: flex; align-items: center; gap: 15px;">
               <i class="fas fa-shield-check fs-2 text-gradient"></i>
@@ -244,23 +250,29 @@
       </div>
       
       <div class="services-grid">
-        <div class="cyber-card service-card reveal-fade-up delay-100">
-          <img src="https://loremflickr.com/400/300/website,code?lock=50" alt="Web App Testing" class="img-fluid rounded mb-4 animate-float" style="height: 180px; width: 100%; object-fit: cover; border: 1px solid var(--border-color);">
+        <div class="cyber-card service-card reveal-fade-up delay-100 d-flex flex-column">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=80" alt="Web App Testing" class="img-fluid rounded mb-4 animate-float" style="height: 180px; width: 100%; object-fit: cover; border: 1px solid var(--border-color);">
           <h3>Web App Testing</h3>
-          <p class="text-muted">Deep dive analysis of your web applications to uncover OWASP Top 10 vulnerabilities and logic flaws.</p>
-          <a href="service-details.html" class="nav-link-cyber mt-3 d-inline-block">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+          <p class="text-muted mb-4">Deep dive analysis of your web applications to uncover OWASP Top 10 vulnerabilities and logic flaws.</p>
+          <div class="mt-auto">
+            <a href="service-details.html" class="nav-link-cyber d-inline-block">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+          </div>
         </div>
-        <div class="cyber-card service-card reveal-fade-up delay-200">
-          <img src="https://loremflickr.com/400/300/server,network?lock=51" alt="Network Security" class="img-fluid rounded mb-4 animate-float" style="height: 180px; width: 100%; object-fit: cover; border: 1px solid var(--border-color); animation-delay: 1s;">
+        <div class="cyber-card service-card reveal-fade-up delay-200 d-flex flex-column">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80" alt="Network Security" class="img-fluid rounded mb-4 animate-float" style="height: 180px; width: 100%; object-fit: cover; border: 1px solid var(--border-color); animation-delay: 1s;">
           <h3>Network Security</h3>
-          <p class="text-muted">Internal and external infrastructure penetration testing to identify misconfigurations and weak access controls.</p>
-          <a href="service-details.html" class="nav-link-cyber mt-3 d-inline-block">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+          <p class="text-muted mb-4">Internal and external infrastructure penetration testing to identify misconfigurations and weak access controls.</p>
+          <div class="mt-auto">
+            <a href="service-details.html" class="nav-link-cyber d-inline-block">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+          </div>
         </div>
-        <div class="cyber-card service-card reveal-fade-up delay-300">
-          <img src="https://loremflickr.com/400/300/smartphone,app?lock=52" alt="Mobile Security" class="img-fluid rounded mb-4 animate-float" style="height: 180px; width: 100%; object-fit: cover; border: 1px solid var(--border-color); animation-delay: 2s;">
+        <div class="cyber-card service-card reveal-fade-up delay-300 d-flex flex-column">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80" alt="Mobile Security" class="img-fluid rounded mb-4 animate-float" style="height: 180px; width: 100%; object-fit: cover; border: 1px solid var(--border-color); animation-delay: 2s;">
           <h3>Mobile Security</h3>
-          <p class="text-muted">Reverse engineering and dynamic analysis of iOS and Android applications to ensure data privacy.</p>
-          <a href="service-details.html" class="nav-link-cyber mt-3 d-inline-block">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+          <p class="text-muted mb-4">Reverse engineering and dynamic analysis of iOS and Android applications to ensure data privacy.</p>
+          <div class="mt-auto">
+            <a href="service-details.html" class="nav-link-cyber d-inline-block">Learn More <i class="fas fa-arrow-right ms-2"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -269,13 +281,14 @@
   <!-- Section 3: Security Process -->
   <section class="section-padding" style="background: var(--section-alt-bg);">
     <div class="container">
+      <div class="text-center mb-5 reveal-fade-up">
+        <h2 class="fs-1">My Penetration <span class="text-gradient">Testing Process</span></h2>
+      </div>
       <div class="row align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0 reveal-blur">
-          <img src="https://loremflickr.com/800/1000/cybersecurity,code?lock=2" alt="Security Workflow" class="img-fluid rounded-4" style="border: 1px solid var(--border-color);">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="Security Workflow" class="img-fluid rounded-4" style="border: 1px solid var(--border-color);">
         </div>
         <div class="col-lg-5 offset-lg-1">
-          <h2 class="fs-1 mb-5 reveal-fade-up text-center">My Penetration <br><span class="text-gradient">Testing Process</span></h2>
-          
           <div class="process-step reveal-fade-up delay-100">
             <div class="process-number">01</div>
             <div>
@@ -322,31 +335,44 @@
       
       <div class="row g-4 justify-content-center">
         <div class="col-md-6 col-lg-4 reveal-fade-up delay-100">
-          <div class="cyber-card cert-card">
-            <!-- Simulated Badge -->
-            <div style="width:50px; height:50px; background:var(--color-primary); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#000; font-weight:bold;">OSCP</div>
-            <div>
-              <h4 class="mb-1 fs-5">Offensive Security</h4>
-              <p class="text-muted small m-0">Certified Professional</p>
+          <div class="cyber-card p-4 h-100 d-flex flex-column" style="border-top: 4px solid var(--color-primary);">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee57d5?w=400&q=80" alt="OSCP Certification" class="img-fluid rounded mb-4" style="height: 160px; width: 100%; object-fit: cover;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="min-width:40px; height:40px; background:rgba(0, 210, 255, 0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--color-primary); font-weight:bold; margin-right: 15px;">
+                <i class="fas fa-shield-halved"></i>
+              </div>
+              <h4 class="mb-0 fs-5">Offensive Security</h4>
             </div>
+            <h5 class="text-gradient fs-6 mb-3">OSCP Certified Professional</h5>
+            <p class="text-muted small mb-0 mt-auto">A rigorous, 24-hour practical exam demonstrating the ability to successfully discover and exploit vulnerabilities in a complex network environment.</p>
           </div>
         </div>
+        
         <div class="col-md-6 col-lg-4 reveal-fade-up delay-200">
-          <div class="cyber-card cert-card">
-            <div style="width:50px; height:50px; background:var(--color-secondary); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#000; font-weight:bold;">CEH</div>
-            <div>
-              <h4 class="mb-1 fs-5">EC-Council</h4>
-              <p class="text-muted small m-0">Certified Ethical Hacker v12</p>
+          <div class="cyber-card p-4 h-100 d-flex flex-column" style="border-top: 4px solid var(--color-secondary);">
+            <img src="https://images.unsplash.com/photo-1614064641913-6b71a30611bf?w=400&q=80" alt="CEH Certification" class="img-fluid rounded mb-4" style="height: 160px; width: 100%; object-fit: cover;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="min-width:40px; height:40px; background:rgba(0, 255, 204, 0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--color-secondary); font-weight:bold; margin-right: 15px;">
+                <i class="fas fa-user-secret"></i>
+              </div>
+              <h4 class="mb-0 fs-5">EC-Council</h4>
             </div>
+            <h5 class="text-gradient fs-6 mb-3">Certified Ethical Hacker v12</h5>
+            <p class="text-muted small mb-0 mt-auto">Validates advanced knowledge in identifying weaknesses and vulnerabilities in target systems using the same tools as malicious hackers.</p>
           </div>
         </div>
+        
         <div class="col-md-6 col-lg-4 reveal-fade-up delay-300">
-          <div class="cyber-card cert-card">
-            <div style="width:50px; height:50px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#000; font-weight:bold;">CISSP</div>
-            <div>
-              <h4 class="mb-1 fs-5">ISC2</h4>
-              <p class="text-muted small m-0">Security Professional</p>
+          <div class="cyber-card p-4 h-100 d-flex flex-column" style="border-top: 4px solid #fff;">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80" alt="CISSP Certification" class="img-fluid rounded mb-4" style="height: 160px; width: 100%; object-fit: cover;">
+            <div class="d-flex align-items-center mb-3">
+              <div style="min-width:40px; height:40px; background:rgba(255, 255, 255, 0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold; margin-right: 15px;">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h4 class="mb-0 fs-5">ISC2</h4>
             </div>
+            <h5 class="text-gradient fs-6 mb-3">CISSP Security Professional</h5>
+            <p class="text-muted small mb-0 mt-auto">The gold standard in information security, proving deep technical and managerial competence to design, engineer, and manage overall security posture.</p>
           </div>
         </div>
       </div>
@@ -366,7 +392,7 @@
       <div class="row g-4">
         <div class="col-md-6 reveal-scale delay-100">
           <div class="case-study-card">
-            <img src="https://loremflickr.com/800/600/server,security?lock=3" alt="Fintech App" class="case-study-img">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80" alt="Fintech App" class="case-study-img">
             <div class="case-study-content">
               <span class="badge bg-dark border border-info mb-2 text-info">FinTech</span>
               <h3 class="fs-4" style="color: #fff;">Zero-Day in Payment Gateway</h3>
@@ -376,7 +402,7 @@
         </div>
         <div class="col-md-6 reveal-scale delay-200">
           <div class="case-study-card">
-            <img src="https://loremflickr.com/800/600/cloud,data?lock=4" alt="Healthcare Platform" class="case-study-img">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="Healthcare Platform" class="case-study-img">
             <div class="case-study-content">
               <span class="badge bg-dark border border-success mb-2 text-success">Healthcare</span>
               <h3 class="fs-4" style="color: #fff;">Cloud Infrastructure Audit</h3>
