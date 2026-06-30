@@ -174,9 +174,9 @@
       </nav>
       
       <div class="header-controls">
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
-        <button id="rtl-toggle" class="icon-btn" aria-label="Toggle RTL"><i class="fas fa-arrow-right-arrow-left"></i></button>
-        <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-md-inline-flex">Hire Me</a>
+        <button id="theme-toggle" class="icon-btn theme-toggle d-none d-lg-flex" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button id="rtl-toggle" class="icon-btn rtl-toggle d-none d-lg-flex" aria-label="Toggle RTL"><i class="fas fa-arrow-right-arrow-left"></i></button>
+        <a href="booking.html" class="btn-cyber btn-cyber-primary d-none d-lg-inline-flex">Hire Me</a>
         
         <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -194,7 +194,11 @@
       <a href="services.html" class="nav-link-cyber">Services</a>
       <a href="blog.html" class="nav-link-cyber active">Blog</a>
       <a href="contact.html" class="nav-link-cyber">Contact</a>
-      <a href="booking.html" class="btn-cyber btn-cyber-primary mt-4">Hire Me</a>
+            <div class="d-flex gap-3 mt-4 justify-content-center align-items-center">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="fas fa-arrow-right-arrow-left"></i></button>
+        <a href="booking.html" class="btn-cyber btn-cyber-primary">Hire Me</a>
+      </div>
     </nav>
   </div>
 
