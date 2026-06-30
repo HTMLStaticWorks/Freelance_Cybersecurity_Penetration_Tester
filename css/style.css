@@ -235,6 +235,13 @@ a:hover {
     margin-left: auto !important;
     margin-right: auto !important;
   }
+  .d-flex > .btn-cyber {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .d-flex:has(> .btn-cyber) {
+    justify-content: center !important;
+  }
   
   /* Make images responsive and centered */
   img {
