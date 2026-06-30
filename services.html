@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freelance Penetration Tester | Services</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,17 +68,26 @@
       border-bottom: none;
     }
 
-    @media(max-width: 768px) {
+    @media(max-width: 991px) {
       .service-list-item {
         flex-direction: column;
         text-align: center;
+        align-items: center !important;
+      }
+      .service-list-item .d-flex.gap-2 {
+        justify-content: center !important;
+      }
+      .service-list-item > div:last-child {
+        display: flex;
+        justify-content: center;
+        width: 100%;
       }
     }
 
     .service-icon-large {
-      flex: 0 0 100px;
-      width: 100px;
-      height: 100px;
+      flex: 0 0 180px;
+      width: 180px;
+      height: 180px;
       background: linear-gradient(135deg, rgba(0, 210, 255, 0.1), rgba(0, 255, 204, 0.1));
       border: 1px solid var(--color-primary);
       border-radius: 20px;
@@ -87,12 +97,12 @@
       font-size: 3rem;
       color: var(--color-primary);
       transition: all 0.3s ease;
-    }
+    } @media(max-width: 576px) { .service-icon-large { flex: 0 0 100px !important; width: 100px !important; height: 100px !important; } }
 
     .service-list-item:hover .service-icon-large {
       transform: scale(1.1) rotate(5deg);
       box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
-    }
+    } @media(max-width: 576px) { .service-icon-large { flex: 0 0 100px !important; width: 100px !important; height: 100px !important; } }
 
     /* 3. Tech Stack Matrix */
     .tech-matrix {
@@ -125,6 +135,8 @@
       border-top: 3px solid var(--color-secondary);
       padding: 30px;
       height: 100%;
+      text-align: center;
+      padding-top: 70px;
     }
 
     [data-theme="light"] .method-card {
@@ -134,10 +146,11 @@
     .method-step-num {
       font-size: 4rem;
       font-weight: 800;
-      color: rgba(0, 210, 255, 0.1);
+      color: rgba(0, 210, 255, 0.4);
       position: absolute;
       top: 10px;
-      right: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       line-height: 1;
     }
 
@@ -458,8 +471,8 @@
   <!-- Section 5: Minimal CTA -->
   <section class="section-padding" style="background: var(--surface-color);">
     <div class="container reveal-fade-up">
-      <div class="minimal-cta d-flex flex-column flex-md-row justify-content-between align-items-center">
-        <div class="mb-4 mb-md-0">
+      <div class="minimal-cta d-flex flex-column flex-lg-row justify-content-between align-items-center text-center text-lg-start">
+          <div class="mb-4 mb-lg-0">
           <h2 class="fs-2 mb-2">Unsure which assessment you need?</h2>
           <p class="text-muted m-0">Let's schedule a brief scoping call to determine your risk profile.</p>
         </div>

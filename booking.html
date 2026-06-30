@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freelance Penetration Tester | Book an Audit</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,16 +73,16 @@
     }
     
     .day-cell.active {
-      background: var(--color-primary);
-      color: #000;
-      box-shadow: 0 0 15px var(--color-primary);
-    }
+        background-color: var(--color-primary) !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px var(--color-primary);
+      }
     
     .day-cell.disabled {
-      color: var(--border-color);
-      cursor: not-allowed;
-      text-decoration: line-through;
-    }
+        color: var(--text-muted);
+        cursor: not-allowed;
+        text-decoration: line-through;
+      }
     
     /* 3. Booking Form */
     .booking-form {
@@ -256,10 +257,10 @@
           <div class="mt-4">
             <h5 class="fs-6 mb-3">Available Slots on Nov 14:</h5>
             <div class="d-flex gap-2 flex-wrap">
-              <button class="btn btn-outline-secondary text-light">09:00 AM</button>
+              <button class="btn btn-outline-secondary">09:00 AM</button>
               <button class="btn btn-cyber-primary text-dark">11:30 AM</button>
-              <button class="btn btn-outline-secondary text-light">02:00 PM</button>
-              <button class="btn btn-outline-secondary text-light">04:30 PM</button>
+              <button class="btn btn-outline-secondary">02:00 PM</button>
+              <button class="btn btn-outline-secondary">04:30 PM</button>
             </div>
           </div>
         </div>
