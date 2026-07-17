@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="dark">
 <head>
   <meta charset="UTF-8">
@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css">
@@ -116,7 +116,7 @@
     .mission-bg {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-image: url('https://loremflickr.com/1920/1080/matrix,code?lock=15');
+      background-image: url('../images/hero-bg.png');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
@@ -141,10 +141,18 @@
       <div class="logo-container">
         <!-- SVG Logo -->
         <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
-          <circle cx="50" cy="45" r="15" fill="currentColor"/>
-          <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
-        </svg>
+            <defs>
+              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="var(--color-primary)" />
+                <stop offset="100%" stop-color="var(--color-secondary)" />
+              </linearGradient>
+            </defs>
+            <path d="M50 8 L85 25 L85 60 C85 78 50 92 50 92 C50 92 15 78 15 60 L15 25 Z" fill="none" stroke="url(#logoGrad)" stroke-width="7" stroke-linejoin="round"/>
+            <circle cx="50" cy="45" r="10" fill="url(#logoGrad)"/>
+            <path d="M50 55 L50 75" stroke="url(#logoGrad)" stroke-width="6" stroke-linecap="round"/>
+            <path d="M25 45 L38 45" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M75 45 L62 45" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round"/>
+          </svg>
         <h1 class="logo-text">Cyber<span class="text-gradient">Sec</span></h1>
       </div>
       
@@ -189,9 +197,7 @@
   <!-- Section 1: Inner Hero -->
   <section class="inner-hero reveal-fade-up">
     <div class="container">
-      <div class="cyber-breadcrumb mb-4">
-        <span><i class="fas fa-home me-2"></i> Home / About Me</span>
-      </div>
+      
       <h1 class="fs-1 mb-3">The Hacker Behind The <span class="text-gradient">Screen</span></h1>
       <p class="text-muted max-w-700 mx-auto">Discover my journey from self-taught enthusiast to a certified enterprise penetration tester helping organizations secure their most critical assets.</p>
     </div>
@@ -240,22 +246,22 @@
       
       <div class="credentials-grid">
         <div class="credential-box reveal-scale delay-100">
-          <i class="fas fa-certificate text-primary fs-3 mb-3"></i>
+          <i class="fas fa-certificate fs-3 mb-3" style="color: var(--color-primary);"></i>
           <h4>eJPT v2</h4>
           <p class="text-muted small mb-0">eLearnSecurity Junior Penetration Tester. Verified hands-on practical skills in network exploitation.</p>
         </div>
         <div class="credential-box reveal-scale delay-200">
-          <i class="fas fa-shield-alt text-secondary fs-3 mb-3"></i>
+          <i class="fas fa-shield-alt fs-3 mb-3" style="color: var(--color-primary);"></i>
           <h4>CompTIA Security+</h4>
           <p class="text-muted small mb-0">Foundational mastery of risk management, threat mitigation, and core security protocols.</p>
         </div>
         <div class="credential-box reveal-scale delay-300">
-          <i class="fas fa-university text-primary fs-3 mb-3"></i>
+          <i class="fas fa-university fs-3 mb-3" style="color: var(--color-primary);"></i>
           <h4>B.Sc. Computer Science</h4>
           <p class="text-muted small mb-0">Specialization in Information Assurance and Cryptography. Graduated with Honors.</p>
         </div>
         <div class="credential-box reveal-scale delay-400">
-          <i class="fas fa-bug text-secondary fs-3 mb-3"></i>
+          <i class="fas fa-bug fs-3 mb-3" style="color: var(--color-primary);"></i>
           <h4>Burp Suite Certified</h4>
           <p class="text-muted small mb-0">PortSwigger certification proving advanced web application vulnerability assessment capabilities.</p>
         </div>
@@ -339,17 +345,25 @@
         <div class="col-lg-4">
           <div class="logo-container mb-4">
             <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50 5 L90 25 L90 60 C90 80 50 95 50 95 C50 95 10 80 10 60 L10 25 Z" fill="none" stroke="currentColor" stroke-width="6"/>
-              <circle cx="50" cy="45" r="15" fill="currentColor"/>
-              <path d="M50 45 L50 70" stroke="var(--bg-color)" stroke-width="4"/>
-            </svg>
+            <defs>
+              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="var(--color-primary)" />
+                <stop offset="100%" stop-color="var(--color-secondary)" />
+              </linearGradient>
+            </defs>
+            <path d="M50 8 L85 25 L85 60 C85 78 50 92 50 92 C50 92 15 78 15 60 L15 25 Z" fill="none" stroke="url(#logoGrad)" stroke-width="7" stroke-linejoin="round"/>
+            <circle cx="50" cy="45" r="10" fill="url(#logoGrad)"/>
+            <path d="M50 55 L50 75" stroke="url(#logoGrad)" stroke-width="6" stroke-linecap="round"/>
+            <path d="M25 45 L38 45" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M75 45 L62 45" stroke="url(#logoGrad)" stroke-width="5" stroke-linecap="round"/>
+          </svg>
             <h2 class="logo-text">Cyber<span class="text-gradient">Sec</span></h2>
           </div>
           <p class="text-muted pe-md-5">Independent cybersecurity professional dedicated to protecting businesses from advanced persistent threats through rigorous ethical hacking.</p>
           <div class="social-icons mt-4">
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
         <div class="col-lg-2 col-md-4">

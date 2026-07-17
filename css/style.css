@@ -1,18 +1,18 @@
 :root {
   /* Brand Colors */
-  --color-primary: #00d2ff; /* Cyber Blue */
-  --color-secondary: #00ffcc; /* Electric Cyan */
-  --color-dark-bg: #0a0e17; /* Deep Navy/Black */
-  --color-dark-surface: #121826;
-  --color-dark-border: rgba(0, 210, 255, 0.2);
+  --color-primary: #9d4edd; /* Electric Purple */
+  --color-secondary: #00f0ff; /* Bright Cyan */
+  --color-dark-bg: #040914; /* Deep Space Navy */
+  --color-dark-surface: #0a1128; /* Midnight Surface */
+  --color-dark-border: rgba(157, 78, 221, 0.3);
   --color-text-light: #f0f4f8;
   --color-text-muted: #a0aec0;
-  --section-alt-bg: rgba(0, 0, 0, 0.2);
+  --section-alt-bg: rgba(0, 0, 0, 0.3);
   
   /* Light Mode Colors */
   --color-light-bg: #f8f9fa;
   --color-light-surface: #ffffff;
-  --color-light-border: rgba(0, 210, 255, 0.3);
+  --color-light-border: rgba(157, 78, 221, 0.3);
   --color-text-dark: #1a202c;
   --color-text-dark-muted: #4a5568;
 
@@ -25,7 +25,7 @@
   --border-color: var(--color-dark-border);
   --text-color: var(--color-text-light);
   --text-muted: var(--color-text-muted);
-  --glow-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+  --glow-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
 }
 
 [data-theme="light"] {
@@ -35,7 +35,7 @@
   --text-color: var(--color-text-dark);
   --text-muted: var(--color-text-dark-muted);
   --section-alt-bg: rgba(0, 0, 0, 0.03);
-  --glow-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+  --glow-shadow: 0 0 15px rgba(157, 78, 221, 0.2);
 }
 
 html, body {
@@ -260,3 +260,83 @@ a:hover {
     transform: none !important;
   }
 }
+
+/* Override Bootstrap text colors to match the theme */
+.text-primary {
+  color: var(--color-primary) !important;
+}
+.text-secondary {
+  color: var(--color-secondary) !important;
+}
+
+/* Ensure all bullet points and check icons use the primary brand color */
+.check-icon,
+.feature-list li i,
+.list-unstyled li i,
+ul li i.fa-check,
+ul li i.fa-check-circle {
+  color: var(--color-primary) !important;
+}
+
+
+/* Hero Background Images */
+.hero-split::before,
+.hero-h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/cyber_hero_bg.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
+[data-theme="light"] .hero-split::before,
+[data-theme="light"] .hero-h2::before {
+  opacity: 0.06;
+}
+
+.hero-split .container,
+.hero-h2 .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Custom Hero Backgrounds for Home 1 and Home 2 */
+.hero-split, .hero-h2 {
+  position: relative;
+  background-image: url('../images/hero-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  z-index: 1;
+}
+
+.hero-split::before, .hero-h2::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--bg-color);
+  opacity: 0.85;
+  z-index: -1;
+}
+
+
+/* Hero Background Styling for Home 1 and Home 2 */
+.hero-split, .hero-h2 {
+  background-image: linear-gradient(rgba(4, 9, 20, 0.4), rgba(4, 9, 20, 0.4)), url('../images/hero-bg.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+[data-theme="light"] .hero-split, [data-theme="light"] .hero-h2 {
+  background-image: linear-gradient(rgba(248, 249, 250, 0.85), rgba(248, 249, 250, 0.85)), url('../images/hero-bg.png') !important;
+}
+
