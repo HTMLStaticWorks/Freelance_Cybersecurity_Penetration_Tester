@@ -89,16 +89,80 @@
       padding: 40px 0;
       border-top: 1px solid var(--border-color);
     }
-    
+
     .social-strip a {
       font-size: 1.5rem;
       color: var(--text-muted);
       transition: color 0.3s ease, transform 0.3s ease;
     }
-    
+
     .social-strip a:hover {
       color: var(--color-primary);
       transform: translateY(-5px);
+    }
+
+    /* ── Responsive Fixes: 768px (tablets) ── */
+    @media (max-width: 768px) {
+      /* Reduce section spacing so there's no huge gap above the map */
+      .section-padding {
+        padding: 60px 0 !important;
+      }
+
+      /* Give the card proper inner breathing room */
+      .contact-form-card {
+        padding: 32px 24px 48px !important;
+        margin-bottom: 0;
+      }
+
+      /* Ensure the submit button row doesn't sit flush at card bottom */
+      .contact-form-card .col-12.mt-4 {
+        margin-top: 20px !important;
+        margin-bottom: 0 !important;
+      }
+
+      .map-section {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow: hidden;
+      }
+
+      .map-section iframe {
+        width: 100% !important;
+        display: block;
+      }
+    }
+
+    /* ── Responsive Fixes: 400px and below (small phones / 360px) ── */
+    @media (max-width: 400px) {
+      .section-padding {
+        padding: 40px 0 !important;
+      }
+
+      .contact-form-card {
+        padding: 24px 16px 44px !important;
+        border-radius: 16px;
+        margin-bottom: 0;
+      }
+
+      .contact-form-card .col-12.mt-4 {
+        margin-top: 16px !important;
+        margin-bottom: 0 !important;
+      }
+
+      .map-section {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow: hidden;
+      }
+
+      .map-section iframe {
+        width: 100% !important;
+        display: block;
+      }
     }
   </style>
 </head>
